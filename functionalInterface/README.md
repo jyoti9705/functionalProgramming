@@ -86,21 +86,73 @@
 
 16. Stream API() : map
     1. map is used to convert from one form to another
-    
+
 17. Stream API() : flatmap
     1. transforms from one form of same type to another
     2. Used in Context where each element in stream represent multiple elements
-       1. Stream<List>
-       2. Stream<Arrays>
+        1. Stream<List>
+        2. Stream<Arrays>
 
 18. StreamAPI() : Distinct , Count ,Sorted
     1. Distinct
-       1. Returns stream with unique elements
+        1. Returns stream with unique elements
     2. Count
-       1. Returns Long with total no of elements in the Stream
+        1. Returns Long with total no of elements in the Stream
     3. Sorted
-       1. Sort the elements in the stream
-    
+        1. Sort the elements in the stream
 
-19. 
+
+19. Sorting can also be done using comparator we will have to pass attribute name using which we want to compare in
+    Comparator.comparing
+
+20. .reversed is used to reverse the results of comparison
+
+21. Stream API() : filter
+    1. Filter is used to ignore specific datasets and only get data sets on which we want to iterate
+
+
+22. Stream API() : reduce
+    1. Reduce is a terminal operation
+    2. To reduce contents of a stream into a single value
+    3. Binary inputs
+    4. We can also perform max and min using reduce function
+    5. It is always safe to use optional when input can be empty or null array
+
+23. Stream API : limit and Skip
+    1. Limit
+        1. Limits the n of elements to be processed in the stream
+    2. Skip
+        1. Skips n of elements from the list processing
+
+
+24. Streams API : anyMatch , allMatch , noneMatch
+    1. All the three take predicate as input and return Boolean as output
+    2. AnyMatch
+        1. Returns true if any element matches the predicate
+    3. AllMatch
+        1. Returns true if all elements matches the predicate
+    4. NoneMatch
+        1. Returns true if none of the elements matches the predicate
+
+25. Streams API : findFirst , findAny
+    1. Returns elements that matches the criteria
+    2. Return type of both the functions are optional
+    3. findFirst
+        1. Returns first element that matches the criteria
+    4. findAny
+        1. Returns first element that matches the criteria
+
+26. Short-circuiting Functions
+    1. limit()
+    2. findFirst()
+    3. findAny()
+    4. allMatch()
+    5. anyMATCH()
+    6. noneMatch()
+    7. All of these functions do not iterate the whole stream to evaluate the result
+
+27. Streams API : Factory Methods
+    1. Of()
+       1. Creates stream of certain values passed to this method
+    2. iterate and generate are used to create infinite streams
     
