@@ -153,6 +153,81 @@
 
 27. Streams API : Factory Methods
     1. Of()
-       1. Creates stream of certain values passed to this method
+        1. Creates stream of certain values passed to this method
     2. iterate and generate are used to create infinite streams
-    
+
+28. Numeric Streams
+    1. In normal stream each time when operation is performed unboxing is done from Integer wrapper class to int , to
+       avoid this we should make use NumericStream
+    2. Preferably for all numeric operations we should make use of Numeric Streams
+    3. range(1,50) will give u range of elements from 1 to 49
+    4. rangeClosed(1,50) will give all the elements from 1 to 50
+    5. Types of Numeric Streams
+        1. Int Stream
+        2. Long Stream
+    6. Double doesn't support range and rangeClosed
+    7. Aggregate methods in Numeric Streams
+        1. sum
+        2. max
+        3. min
+        4. average
+    8. Boxing
+        1. Converting primitive type variable to Wrapper Class
+    9. UnBoxing
+        1. Converting wrapper class to primitive type
+        2. mapToInt can be used
+    10. MaptoObj
+        1. Convert each element in numeric stream to obj
+    11. MapToLong
+        1. Convert a numeric stream to long stream
+    12. MapTODouble
+        1. Converts numeric stream to Double
+29. Collect
+    1. Collect results till stream is ended
+    2. Joining
+        1. Joining performs String concatenation on the elements in the stream
+        2. Versions
+            1. Joining without delimiter
+                1. It will simply concat strings with space in them
+            2. Joining with delimiter
+                1. It will add delimiters specified between the Strings in the stream
+            3. Joining with delimiter , prefix and Suffix
+                1. It will add prefix , delimiter and Suffix to the Strings in the Stream
+        3. Counting
+            1. Collector returns total number of elements as a result
+        4. Mapping
+            1. Collector applies transformation function first and then collects the data in the collection
+        5. MinBy
+            1. MinBy is another terminal operation used in conjunction with comparator will return the lowest element
+               depending upon characters passed
+        6. MaxBy
+            1. MaxBy is another terminal operation used in conjunction with comparator will return the highest element
+               depending upon the character passed
+        7. SummingInt and AveragingInt
+            1. SummingInt
+                1. Returns sum as return
+            2. AverageInt
+                1. Returns avg as a return
+            3. Support is also provided for summingLong , SummingDouble , AveragingLong , Averaging double
+        8. GroupingBy
+            1. GroupingBy collector is equivalent to groupBy operation in SQL
+            2. It is used to group elements based on property
+            3. The output of GroupBy is going to be Map<K,V.
+            4. Grouping By Types
+                1. groupingBy(Classifier)
+                2. groupingBy(classifier, downstream)
+                3. groupingBy(classifier , supplier , downstream)
+            5. MaxBy with GroupingBy
+                1. Returns Map of key value with value as optional having content with max expected
+            6. MinBy with GroupingBy
+            7. CollectingAndThen With GroupingBy
+        9. PartitioningBy
+            1. Kind of GroupingBy
+            2. accepts predicate as an input
+            3. Return type of collector is Map<K,V>
+                1. Key is the boolean value
+            4. Versions of partitioningBy()
+                1. one which accepts predicate as input
+                2. another one accepting predicate and downstream as input
+            5. 
+               
