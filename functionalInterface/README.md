@@ -1,4 +1,5 @@
-1. Functional Interfaces are present in Java since 1.0
+`1. Functional Interfaces are present in Java since 1.0
+
 2. Those were referred as single abstract method interface, this is not categorised as Functional Interface
 3. Any Interface with exactly one abstract methods are called single abstract methods
 4. @FunctionalInterface annotation was introduced with Java8 , and all the methods with one abstract method are
@@ -229,5 +230,53 @@
             4. Versions of partitioningBy()
                 1. one which accepts predicate as input
                 2. another one accepting predicate and downstream as input
-            5. 
-               
+
+30. Streams Parallel Processing
+    1. Parallel Streams source data in multiple parts , process them parallel and collects the data to return output
+    2. Unless we do not specify that we want to use parallel , sequential stream would be called
+    3. Parallel Stream uses Fork/Join Framework that got introduced in Java 7
+    4. Number of Threads that are created == Number of threads available in machine
+    5. Do not use parallel streams for mutable variables
+
+31. Optional
+    1. Used to represent Non-Null Value
+    2. Avoids Null Pointer Exception
+    3. Avoids Unnecessary Null Checks
+    4. isPresent is used to identify if Optional has a value
+    5. if not values is present in optional it gives optional.Empty as a result when ofNullable is used
+    6. If Optional.Of is used and value passed is null then Optional.Of gives null pointer exception , because it
+       expects us to have values all the time
+    7. Optional.empty returns an empty object
+    8. orElse method , orElse get , orElse throw
+        1. orElse
+            1. Returns value if present
+            2. In rest scenario it will execute the orElse input
+        2. orElseGet
+            1. Accepts supplier as an input
+        3. orElseThrow
+            1. Throws an exception when data was not found
+    9. isPresent
+        1. checks if optional object has an value
+        2. if value is present it will return true or else it will return false
+    10. ifPresent
+        1. ifPresent gives the value along with telling whether object is present or not
+    11. filter , map , flatmap
+        1. Filter gives u feasibility to use filter on optional object
+        2. FlaTMap in optional context is used to get value of optional inside another optional object
+32. Default and static methods in interfaces
+    1. default keyword is used to identify a default method in an interface
+    2. Default method can be overridden in implementation class
+    3. Static method cannot be overridden in the code
+    4. When we override default method the class which is overriding the method will be called
+    5. Abstract Classes vs Interfaces
+        1. Instance variables are not allowed in Interfaces
+        2. A class and extend only one class but a class can implement multiple interfaces
+        3. Does Java enabled Multiple Inheritance ?
+            1. Yes
+            2. But this was never possible before Java8 
+            3. Class that overrides default method will have more precedence over
+            4. To override default method ,class should implement the interface
+            5. Or the class should be sub-interface that extends the interface
+            6. If you are implementing two interface with similar methods , you need to override the same method in implementation class to resolve the conflict
+
+                               `

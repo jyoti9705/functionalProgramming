@@ -13,5 +13,8 @@ public class PartitioningByExample {
         Predicate<Student> studentPredicate = student -> student.getGender().equals("female");
         Map<Boolean, List<Student>> values = studentList.stream().collect(partitioningBy(studentPredicate));
         System.out.println(values);
+
+        // to get number of available processors in a machine
+        //System.out.println(Runtime.getRuntime().availableProcessors());
     }
 }
