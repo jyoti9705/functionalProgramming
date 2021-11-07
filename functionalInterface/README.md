@@ -273,10 +273,60 @@
         2. A class and extend only one class but a class can implement multiple interfaces
         3. Does Java enabled Multiple Inheritance ?
             1. Yes
-            2. But this was never possible before Java8 
+            2. But this was never possible before Java8
             3. Class that overrides default method will have more precedence over
             4. To override default method ,class should implement the interface
             5. Or the class should be sub-interface that extends the interface
-            6. If you are implementing two interface with similar methods , you need to override the same method in implementation class to resolve the conflict
-
-                               `
+            6. If you are implementing two interface with similar methods , you need to override the same method in
+               implementation class to resolve the conflict
+33. Date and Time Libraries
+    1. New Date and Time libraries are LocalDate, LocalTime and LocalDateTime, and they are part of java.time package
+    2. These new libraries are created taking inspiration from Joda-Time library
+    3. All these classes are immutable
+    4. Supporting classes like instant , Duration and Period etc
+    5. Date and Calendar were used Prior 8 , but there were many limitations to it
+    6. LocalDate is used to represent Date
+        1. We can get values from LocalDate
+        2. We can modify values in LocalDate
+        3. Since LocalDate is immutable each time we modify the value the new instance of LocalDate is created
+        4. We can create LocalDate by passing values
+        5. We can convert LocalDate to LocalDateTime and ViceVersa
+    7. LocalTime is used to represent time
+        1. We can get values from LocalTime
+        2. We can modify values in LocalTime
+        3. Since LocalTime is immutable each time we modify the value the new instance of LocalDate is created
+        4. We can create LocalTime by passing values
+        5. We can convert LocalTime to LocalDateTime and ViceVersa
+    8. LocalDateTime is used to represent both Date and Time
+        1. We can get values from LocalDateTime
+        2. We can modify values in LocalDateTime
+        3. Since LocalDateTime is immutable each time we modify the value the new instance of LocalDate is created
+        4. We can create LocalDateTime by passing values
+        5. We can convert LocalDateTime to LocalTime,LocalDate and ViceVersa
+    9. Period
+        1. Date based representation of Time in Days, Months and Years and is part of java.time package
+        2. Compatible with LocalDate
+        3. It represents a period of time and not just a specific date and time
+        4. Period can be used to calculate difference between two dates
+    10. Duration
+        1. Duration is time base representation of time in hours , minutes , seconds and nanoseconds
+        2. Compatible with LocalTime and LocalDateTime
+        3. It represents duration of time and not just specific time
+    11. Instant
+        1. Represent time in a machine-readable format
+    12. TimeZones
+        1. ZonedDateTime
+            1. Represent Date/Time with its TimeZone
+            2. Combination of ZoneOffSet and ZoneId
+        2. ZoneOffSet
+            1. Represent the offset time from UTC Time
+        3. ZoneId
+            1. Determines Zone to which this time belongs to
+    13. DateTimeFormatter
+        1. Introduced in Java8 as the part of java.time.format package
+        2. Used to parse and format the LocalDate , LocalTime and LocalDateTime
+        3. Parse
+           1. Converting String to LocalDate/LocalTime/LocalDateTime
+        4. Format
+           1. Converting a LocalDate/LocalTime/LocalDateTime to a String
+           
