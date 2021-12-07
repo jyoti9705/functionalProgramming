@@ -1,10 +1,10 @@
 `1. Functional Interfaces are present in Java since 1.0
 
-2. Those were referred as single abstract method interface, this is not categorised as Functional Interface
-3. Any Interface with exactly one abstract methods are called single abstract methods
+2. Those were referred as single abstract method interface, this is now categorised as Functional Interface
+3. Any Interface with exactly one abstract methods are called single abstract method
 4. @FunctionalInterface annotation was introduced with Java8 , and all the methods with one abstract method are
    annotated with this interface
-5. This is the optional interface, but it validates the class to make sure that there is only one abstract methods
+5. This is the optional interface, but it validates the class to make sure that there is only one abstract method
 6. New Functional Interfaces which were introduced in Java8
     1. Consumer
         1. Has BiConsumer extension
